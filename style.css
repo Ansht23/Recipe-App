@@ -1,0 +1,254 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  background-color: #332970;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(1, 7, 63);
+  padding: 20px;
+  z-index: 1;
+}
+
+header nav h1 {
+  font-size: 30px;
+  font-weight: 550;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+header nav form {
+  display: flex;
+  justify-content: center;
+}
+
+form input[type="text"] {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+form input[type="text"],
+button[type="submit"] {
+  border: none;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.1s ease-in-out;
+}
+
+form button[type="submit"] {
+  background-color: #1c0081;
+  color: #fff;
+  cursor: pointer;
+}
+
+form button[type="submit"]:hover {
+  background-color: #1f0a63;
+}
+
+.recipe-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  text-align: center;
+}
+
+.recipe-container.has-recipes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 40px;
+  width: 80%;
+  margin: 10px auto;
+  padding: 20px;
+  place-items: center;
+  height: auto;
+}
+
+.recipe {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  color: #240f09;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(94, 85, 85, 0.1);
+  cursor: pointer;
+  max-width: 300px;
+  place-items: center;
+  padding: 10px;
+  transition: transform 0.3sec ease-in-out;
+}
+
+.recipe:hover {
+  transform: scale(1.02);
+}
+.recipe img {
+  height: 300px;
+}
+
+.recipe h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+.recipe p {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.recipe button {
+  background-color: #1c0081;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.recipe button:hover,
+.recipe-close-Btn:hover {
+  background-color: #1f0a63;
+}
+
+.recipe-details {
+  display: none;
+  background-color: #5564e2;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 12px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  height: 60%;
+  width: 80%;
+  font-size: 15px;
+  max-height: 80vh;
+  transition: all 0.5s ease-in-out;
+  overflow-y: scroll;
+}
+
+.recipe-info {
+  padding: 20px;
+}
+
+.recipeName {
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.ingredientList li {
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.recipeInstructions p {
+  list-style: none;
+  line-height: 30px;
+  white-space: pre-line;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.recipeName,
+.ingredientList,
+.recipeInstructions {
+  margin-bottom: 20px;
+}
+
+.recipe-details::-webkit-scrollbar {
+  width: 10px;
+}
+
+.recipe-details::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 10px;
+  --webkit-border-radius: 10px;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgb(156, 156, 156);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #4d4c4c;
+  border-radius: 5px;
+  --webkit-border-radius: 10px;
+}
+
+.recipe-close-Btn {
+  border: none;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #1c0081;
+  color: #fff;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  text-align: center;
+  background-color: rgb(1, 7, 63);
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+}
+
+@media screen and (max-width: 600px) {
+  header nav {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  header nav form {
+    width: 90%;
+    margin-top: 10px;
+  }
+
+  form input[type="text"] {
+    width: 100%;
+  }
+
+  .recipe-container {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .recipe-details {
+    width: 90%;
+    height: 60%;
+  }
+}
